@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(onPressed: ( ) { } , icon: const Icon(FontAwesomeIcons.magnifyingGlass,
-            size: 30,
+            size: 25,
           ))
         ],
       ),
