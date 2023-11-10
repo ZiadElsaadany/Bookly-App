@@ -11,7 +11,7 @@ class CustomListViewItemImageForBook extends StatelessWidget {
       aspectRatio: 3/4,
       child: Container(
 
-        margin: const EdgeInsets.symmetric(horizontal: 8),
+        margin: const EdgeInsets.only(right: 12),
         decoration:BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             image: const DecorationImage(
