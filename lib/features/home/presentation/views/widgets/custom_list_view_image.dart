@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class CustomListViewItemImageForBook extends StatelessWidget {
-  const CustomListViewItemImageForBook({Key? key}) : super(key: key);
+class CustomImageForBook extends StatelessWidget {
+  const CustomImageForBook({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
