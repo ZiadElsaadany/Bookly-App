@@ -1,10 +1,8 @@
 
-import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
-import 'package:bookly/features/home/presentation/views/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
 
 
 class SplashBody extends StatefulWidget {
@@ -50,7 +48,7 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
        seconds: 2
    ),
          ()  {
-       Get.to(()=>const HomePage(),transition: Transition.fade,duration: kTransitionDuration);
+GoRouter.of(context).push(AppRouter.kHomeScreenPath);
      } ,
    );
  }
