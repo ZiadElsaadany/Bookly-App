@@ -23,7 +23,8 @@ class SearchResultListView extends StatelessWidget {
             horizontal: 8.0,
             vertical: 10
         ),
-        child: BestSellerItem(),
+        // child: BestSellerItem(bookModel: ,),
+        child: SizedBox(),
       );
     } );
   }

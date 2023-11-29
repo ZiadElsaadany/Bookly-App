@@ -21,6 +21,7 @@ class FeaturedListViewBooks extends StatelessWidget {
               .height * .3,
           child: ListView.builder(
 
+
             physics: const BouncingScrollPhysics(),
 
             scrollDirection: Axis.horizontal,
@@ -30,7 +31,7 @@ class FeaturedListViewBooks extends StatelessWidget {
                 state.books[index].volumeInfo?.imageLinks?.thumbnail??""
                 ,);
             },
-            itemCount: 5,
+            itemCount: state.books.length,
           ),
         );
       }else if(state is GetFeaturedBookFailure ) {

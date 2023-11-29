@@ -40,7 +40,11 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height:10 ,
         ),
-        const BookRated(),
+         BookRated(
+          count: 0,
+
+          rating: 0,
+        ),
       ],
     );
   }
