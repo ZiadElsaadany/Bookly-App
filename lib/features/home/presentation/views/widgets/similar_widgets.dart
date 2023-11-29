@@ -15,7 +15,7 @@ class SimilarWidget extends StatelessWidget {
 
         scrollDirection: Axis.horizontal,
         itemBuilder: (ctx,index) {
-          return   const CustomImageForBook();
+          return   const CustomImageForBook(imageUrl: '',);
         },
         itemCount: 5,
       ),
