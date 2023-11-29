@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/BookModel.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_image.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similar_section.dart';
@@ -11,12 +12,13 @@ import 'book_details_scetion.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({Key? key}) : super(key: key);
+  const BookDetailsBody({Key? key, required this.bookModel}) : super(key: key);
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
-      padding: EdgeInsets.symmetric(
+    return   Padding(
+      padding: const EdgeInsets.symmetric(
           horizontal: 25.0),
       child:CustomScrollView(
         slivers: [
@@ -24,24 +26,26 @@ class BookDetailsBody extends StatelessWidget {
             hasScrollBody:  false,
             child:  Column(
               children: [
-                BookDetailsCustomAppBar() ,
+                const BookDetailsCustomAppBar() ,
 
-                SizedBox(
+                const SizedBox(
                   height:6 ,
                 ),
-                BookDetailsSection( ),
-                SizedBox(
+                BookDetailsSection(
+                  bookModel: bookModel,
+                ),
+                const SizedBox(
                   height:30 ,
                 ),
-                BooksAction(),
+                const BooksAction(),
                 // for all size Expanded to make it always bottom
-                Expanded(
+                const Expanded(
                   child: SizedBox(
                     height:50 ,
                   ),
                 ),
-               SimilarSection(),
-                SizedBox(
+               const SimilarSection(),
+                const SizedBox(
                   height:40 ,
                 ),
 

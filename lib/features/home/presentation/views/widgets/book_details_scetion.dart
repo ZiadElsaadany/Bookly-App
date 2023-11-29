@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/data/models/book_model/BookModel.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -5,8 +6,9 @@ import 'book_rating.dart';
 import 'custom_list_view_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({Key? key}) : super(key: key);
+  const BookDetailsSection({Key? key, required this.bookModel}) : super(key: key);
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width =MediaQuery.of(context).size.width;
@@ -16,13 +18,17 @@ class BookDetailsSection extends StatelessWidget {
         Padding(
           padding:  EdgeInsets.symmetric(
               horizontal: width*0.22),
-          child: const CustomImageForBook(imageUrl: '',),
+          child:  CustomImageForBook(
+            imageUrl:             bookModel.volumeInfo?.imageLinks?.thumbnail??""
+
+          ),
         ) ,
         const SizedBox(
           height:35 ,
         ),
-        const Text(
-          "The hungle Book",
+         Text(
+          bookModel.volumeInfo?.title??"",
+          textAlign: TextAlign.center,
           style: Styles.textStyle30,
         ),
         const SizedBox(
@@ -31,7 +37,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            "Ziad Elsaadany",
+    bookModel.volumeInfo?.authors?[0]??"",
             style: Styles.titleMedium.copyWith(
                 fontStyle: FontStyle.italic
             ),
@@ -41,9 +47,9 @@ class BookDetailsSection extends StatelessWidget {
           height:10 ,
         ),
          BookRated(
-          count: 0,
+          count: bookModel.volumeInfo?.averageRating??0,
 
-          rating: 0,
+          rating: bookModel.volumeInfo?.ratingsCount??0,
         ),
       ],
     );
