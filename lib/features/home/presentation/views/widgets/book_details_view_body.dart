@@ -37,7 +37,9 @@ class BookDetailsBody extends StatelessWidget {
                 const SizedBox(
                   height:30 ,
                 ),
-                const BooksAction(),
+                 BooksAction(
+                  bookModel: bookModel,
+                ),
                 // for all size Expanded to make it always bottom
                 const Expanded(
                   child: SizedBox(

@@ -34,7 +34,8 @@ abstract class AppRouter  {
             bookModel: state.extra as BookModel,
           ),
         ),
-      ), GoRoute(
+      ),
+      GoRoute(
         path:kSearchView,
         builder: (context, state) => const SearchView(),
       ),
